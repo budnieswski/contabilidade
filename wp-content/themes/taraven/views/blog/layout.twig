@@ -1,0 +1,216 @@
+{% import 'views/macros.twig' as macros %}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]--> <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]--> <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>{{ fn('wp_title') }}</title>
+  <!-- <meta name="author" content="Guilherme Budnieswski - Muito Mais Digital"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+
+  {# Favicons
+  ================================================== #}
+  <link rel="shortcut icon" href="{{ site.theme.link }}/assets/img/favicon/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="{{ site.theme.link }}/assets/img/favicon/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ site.theme.link }}/assets/img/favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.theme.link }}/assets/img/favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ site.theme.link }}/assets/img/favicon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.theme.link }}/assets/img/favicon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ site.theme.link }}/assets/img/favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ site.theme.link }}/assets/img/favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ site.theme.link }}/assets/img/favicon/apple-touch-icon-152x152.png" />
+
+  {{wp_head}}
+
+  {# Browser Update
+  ================================================== #}
+  <script> 
+  var $buoop = {c:2}; 
+  function $buo_f(){ 
+   var e = document.createElement("script"); 
+   e.src = "//browser-update.org/update.js"; 
+   document.body.appendChild(e);
+  };
+  try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+  catch(e){window.attachEvent("onload", $buo_f)}
+  </script> 
+</head>
+
+<body id="blog">
+  
+{# Header
+================================================== #}
+<div class="band header">
+  <div class="container">
+
+      <div class="three columns logo"> <a href="{{ site.url }}/blog" class="block">LOGO</a> </div>
+
+      <div class="two columns u-remove-left google-partner">
+        <a href="https://www.google.com/partners/?hl=pt-BR#a_profile;idtf=6313788996;" target="_blank" title="Agência Parceira Google">
+          <img src="{{theme.link}}/assets/img/logo-google-partner.png" alt="Agência Parceira Google" title="Agência Parceira Google">
+        </a>
+      </div>
+
+      <div class="four columns afins u-pull-right">
+        <div class="wrapper">
+          <div class="telefone">(41) 3042-0444 | (41) 3046-0449</div>
+          <div class="voltar-site">
+            <a href="{{ site.url }}" title="Volte para o site">
+              <img class="u-max-full-width" src="{{ theme.link }}/assets/img/blog/volte-para-o-site.png" alt="Volte para o site" title="Volte para o site">
+            </a>
+          </div>
+        </div>
+      </div> {# afins #}      
+
+  </div> <!-- e#container -->
+</div> <!-- e#header -->
+
+
+{# Menu
+================================================== #}
+<div class="band menu">
+  <div class="container">
+    
+    <nav class="twelven columns align-center">
+      <div class="separator"></div>
+      {{ macros.menu(site.menu.blog.get_items, '') }}        
+    </nav>
+
+  </div> <!-- e#container -->
+</div> <!-- e#menu -->
+
+
+{# Newsletter
+================================================== #}
+<div class="band newsletter">
+  <div class="spacer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="columns one-half">
+        <h3>Não perca as próximas atualizações,<br>assine nossa newsletter</h3>
+      </div>
+      <div class="columns one-half">
+        <form method="post" action="{{site.link}}/wp-content/plugins/newsletter/do/subscribe.php">
+          <div class="columns seven">
+            <div class="row"> <input type="text" name="nn" required="required" placeholder="NOME"> </div>
+            <div class="row"> <input type="text" name="ne" required="required" placeholder="E-MAIL"> </div>
+          </div>
+          <div class="columns five"><input type="submit" value="INSCREVA-SE AGORA" class="enviar"></div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- e#container -->
+</div> <!-- e#newsletter -->
+
+
+{# Wrap
+================================================== #}
+<div class="band wrap">
+  <div class="container">    
+    
+    <div class="row">
+      <div class="eight columns">
+      {% block content %}{% endblock %}
+      </div> <!-- e#conteudo -->
+      
+      <div class="four columns u-remove-left u-pull-right sidebar">{{ get_sidebar('blog/sidebar') }}</div>
+      <div class="u-cf"><br></div>
+    </div>
+
+    {# <div class="home">{% include 'index.fullblock-contato.twig' %}</div> #}
+
+
+  </div> <!-- e#container -->
+</div> <!-- e#wrap -->
+
+{# Newsletter
+================================================== #}
+<div class="band newsletter">
+  <div class="container">
+    <div class="row">
+      <div class="columns one-half">
+        <h3>Não perca as próximas atualizações,<br>assine nossa newsletter</h3>
+      </div>
+      <div class="columns one-half">
+        <form method="post" action="{{site.link}}/wp-content/plugins/newsletter/do/subscribe.php">
+          <div class="columns seven">
+            <div class="row"> <input type="text" name="nn" required="required" placeholder="NOME"> </div>
+            <div class="row"> <input type="text" name="ne" required="required" placeholder="E-MAIL"> </div>
+          </div>
+          <div class="columns five"><input type="submit" value="INSCREVA-SE AGORA" class="enviar"></div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- e#container -->
+  <div class="spacer larger"></div>
+</div> <!-- e#newsletter -->
+
+
+
+{# Footer
+================================================== #}
+<div class="band footer">
+  <div class="container">
+    <a href="#" class="scrollup">GoUp</a>
+    
+    <div class="row">
+      <a href="{{ fn('get_permalink', 194) }}" title="Trabalhe Conosco">
+        <img src="{{theme.link}}/assets/img/footer-trabalhe-conosco.png" alt="Trabalhe Conosco" title="Trabalhe Conosco">
+      </a>
+      <a href="https://www.facebook.com/muitomaisdigital" target="_blank" title="Facebook Muito Mais Digital">
+        <img src="{{theme.link}}/assets/img/footer-facebook.png" alt="Facebook Muito Mais Digital" title="Facebook Muito Mais Digital">
+      </a>
+    </div>
+
+    <div class="row">
+      <div itemscope itemtype="http://schema.org/LocalBusiness">
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">Av. Marechal Floriano Peixoto - 7.401 - Sala 9 - Hauer</span> |
+          <span itemprop="addressLocality">Curitiba</span> -
+          <span itemprop="addressRegion">PR</span> |
+          <span itemprop="postalCode">81.650-000</span> |
+        </span>
+          <span itemprop="telephone">41 3042-0444</span> |
+          <a href="mailto:falecom@muitomaisdigital.com.br" itemprop="email">falecom@muitomaisdigital.com.br</a>
+      </div>
+    </div>
+
+  </div> {# end container #}
+</div> {# end footer #}
+
+
+
+{# JS
+================================================== #}
+{% for js in site.theme.js %}
+  {% if js matches '{^(http|https|//)}' %}
+    <script src="{{ js }}"></script>
+  {% else %}
+    <script src="{{ site.theme.link }}/assets/js/{{ js }}"></script>
+  {% endif %}
+{% endfor %}
+
+<a href="https://plus.google.com/117179421799037444552" rel="publisher"></a>
+
+{# Google Remarketing Tag 
+================================================== #}
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 985611875;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/985611875/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+{{wp_footer}}
+</body>
+</html>

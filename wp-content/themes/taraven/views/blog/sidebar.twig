@@ -1,0 +1,38 @@
+
+<div class="sidebar">
+
+  <div class="row busca">
+    <div class="row search">
+      <form action="{{ site.url }}/blog">
+        <input type="text" name="s" id="s" placeholder="Buscar" />
+        <input type="submit" value="Enviar" class="enviar" />
+      </form>
+    </div>
+    <div class="row flag">
+      <a href="{{site.url}}"> www.MuitoMaisDigital.com.br </a>
+    </div>
+  </div>
+
+
+  <div class="row categories">
+    <div class="text">Categorias</div>
+    {{ macros.menu(site.menu.blog_sidebar.get_items, '', '» ') }}
+  </div>
+
+  <ul class="row social">
+    {% for item in site.acf.blog_sidebar_social %}
+      <li>
+        <a href="{{item.link}}" title="{{item.title}}">
+          <img src="{{item.logo}}" alt="{{item.title}}" title="{{item.title}}" class="u-max-full-width">
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="row slides">
+    <div class="wrap-banner">
+      <ul class="rslides"> {{ fn('taraven_acf_gallery', 'blog_sidebar_galeria') }} </ul>
+    </div>
+  </div> {# end banner #}
+  
+</div>

@@ -1,0 +1,32 @@
+{% extends 'blog/layout.twig' %}
+
+{% block content %}
+<div class="posts">
+
+  {% set img_dft = site.theme.link ~ '/assets/img/image-available.png' %}
+  {% for post in posts %}
+  <div class="row item">
+    <figure class="columns four">
+      <img src="{{post.get_field('imagem_destaque')|default(img_dft)}}" alt="{{post.title}}" title="{{post.title}}">
+     </figure>
+    <div class="columns eight">
+      {% set date = post.post_date %}
+      <div class="row title"><h2><a href="{{post.link}}" title="{{post.title}}">{{post.title}}</a></h2></div>
+      <div class="row">
+        <div class="parents"> {{fn('blog_show_parents_list', post.ID)}} </div>
+        <div class="date">{{ date|date('d') ~' de <span>'~ date|date('F') ~'</span> de '~ date|date('Y') }}</div>
+      </div>
+      <div class="row resumo">{{ post.get_field('resumo')|truncate(40) }}</div>
+      <div class="row seemore">
+        <a href="{{post.link}}" title="Continue lendo sobre {{post.title}}">Continue lendo</a>
+      </div>
+    </div> 
+  </div> {# ~ item #}
+  {% endfor %}
+
+  <div class="row"> <div class="twelve columns pagination"> {{ fn('taraven_pagination') }} </div> </div>
+
+  <div class="row"> {{fn('do_shortcode', '[blog-banner-rodape]')}} </div>
+
+</div>
+{% endblock %}
