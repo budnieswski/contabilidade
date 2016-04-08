@@ -71,19 +71,23 @@ Class Taraven extends TimberSite {
 
     $theme_uri = get_template_directory_uri() . "/assets";
 
+    if( !empty($this->theme->js) ):
     foreach ($this->theme->js AS $key => $script) {
       if( preg_match('/^(http|https|\/\/)/',$script) )
         wp_enqueue_script( md5($script), $script, array(), '1.0.0', true );
       else
         wp_enqueue_script( md5($script), $theme_uri . '/js/' . $script, array(), '1.0.0', true );        
     }
+    endif;
 
+    if( !empty($this->theme->css) ):
     foreach ($this->theme->css AS $key => $script) {
       if( preg_match('/^(http|https|\/\/)/',$script) )
         wp_enqueue_style( md5($script), $script );
       else
         wp_enqueue_style( md5($script), $theme_uri . '/css/' . $script );      
     }
+    endif;
   }
 
 

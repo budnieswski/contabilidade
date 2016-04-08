@@ -15,6 +15,11 @@ Class MyTheme extends Taraven {
     // parent::preview_version(true);
 
     $settings = array(
+      'css' => array(),
+      'js' => array(
+        'main.min.js',
+        'js_composer_front.min.js',
+        ),
       // 'css' => array('main.css'),
       // 'js' => array(
       //     'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js',
