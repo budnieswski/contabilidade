@@ -12,31 +12,13 @@ Class MyTheme extends Taraven {
   
   function __construct() {
 
-    // parent::preview_version(true);
-
     $settings = array(
-      'css' => array(),
+      'css' => array('main.css'),
       'js' => array(
+        'wpexLocalize.min.js',
         'main.min.js',
         'js_composer_front.min.js',
         ),
-      // 'css' => array('main.css'),
-      // 'js' => array(
-      //     'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js',
-      //     'lib/jquery.fancybox.min.js',
-      //     'lib/jquery.meio.mask.min.js',
-      //     'lib/responsiveslides.min.js',
-      //     // 'lib/jquery.validate.min.js',
-      //     // 'lib/jssor.js',
-      //     // 'lib/jssor.slider.js',
-      //     // 'lib/stick.min.js',
-      //     'lib/jquery.menumaker.js',
-      //     // 'http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js?ver=1.0.0',
-      //     'main.js',
-      //     // For use Advanced Custom Fields Maps
-      //     // 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false',
-      //     // 'lib/google.maps.js',
-      // ),
       'menu' => array('Header'),
       'acf' => array('Site'),
       'blog' => false,

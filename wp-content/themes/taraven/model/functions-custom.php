@@ -19,39 +19,6 @@
 
 
 /*
-* Dinamic Contact form and Map together
-*/
-function sc_contato ($atts='', $content="") {
-
-  if( empty($atts) || empty($atts['id']) ) return false;
-
-  $contact_form = do_shortcode("[contact-form-7 id=\"{$atts['id']}\" title=\"Contato\"]");
-  $map = do_shortcode("[mapa]");
-
-  $html = "<div class=\"row\">";
-  $html .= "<div class=\"one-half column\"> {$contact_form} </div>";
-  $html .= "<div class=\"one-half column\"> {$map} </div>";
-  $html .= "</div>";
-
-  return $html;
-}
-add_shortcode('contato', 'sc_contato');
-
-/*
-* Dinamic Advanced Custom Fields MAP
-*/
-function sc_mapa ($atts='', $content="") {
-
-  $location = get_field('mapa');
-  if( !empty($location) ){
-    return Timber::compile('shortcode.mapa.twig', array('location' => $location));
-  } else {
-    return false;
-  }
-}
-add_shortcode('mapa', 'sc_mapa');
-
-/*
 * Remove WPSEO getting images from POST
 */
 // add_filter('wpseo_pre_analysis_post_content', 'mysite_opengraph_content');

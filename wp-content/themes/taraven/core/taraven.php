@@ -47,6 +47,9 @@ Class Taraven extends TimberSite {
     add_action('init', array( $this, 'add_menu' ) );
     add_action('init', array( $this, 'add_acf' ) );
 
+    // Remove WP Emoji
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
 
     // After all 
     add_filter('get_twig',  array($this, 'add_to_twig') );

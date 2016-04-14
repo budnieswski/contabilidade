@@ -2,41 +2,24 @@
 
 {% block content %}
 
-<div class="home">
+  {% include 'index/banner.twig' %}
 
-{# 
- # Goood loop break line
- #}
-{% if servicos %}
-<div class="row servicos">
-  {% for servico in servicos %}
-    {% if loop.first or (loop.index0 % 4) == 0 %} <div class="row"> {% endif %}
+  {% include 'index/sobre.twig' %}
 
-    <div class="columns three item"> Nothing </div>
-  
-    {% if loop.last or ((loop.index0 + 1) % 4) == 0 %} </div> {% endif %}
-  {% endfor %}
-</div>
-{% endif %}
+  {% include 'index/video.twig' %}
 
-<div class="row blog">
-  <h2>BLOG</h2>
-  <div class="row">
+  {% include 'index/servicos.twig' %}
+                    
+  {% include 'index/contact-short.twig' %}
 
-    {% set blog = get_posts({'category':7, 'posts_per_page':3})  %}
-    {% for item in blog %}
-      <div class="one-third column">
-        <h3>{{item.title}}</h3>
-        <div class="summary">{{item.post_content|excerpt(15)}}</div>
-        <a href="{{item.link}}" class="seemore">Veja Mais</a>
-      </div>
-    {% endfor %}
+  {% include 'index/projects.twig' %}
 
-  </div>
-</div>
-<!-- #blog -->
+  {% include 'index/clients.twig' %}
 
+  {% include 'index/team.twig' %}
 
-</div>
+  {% include 'index/testimonials.twig' %}
+
+  {% include 'index/contact.twig' %}
 
 {% endblock %}
