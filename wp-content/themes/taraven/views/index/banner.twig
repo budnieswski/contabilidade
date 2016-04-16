@@ -1,22 +1,28 @@
 <div class="wpex-vc-row-wrap clr wpex-vc-row-centered wpex-offset-vc-15">
 
-                  <div class="vc_row wpb_row vc_row-fluid vc_custom_1444181465454 vc_row-o-full-height vc_row-o-columns-middle vc_row-flex typography-white">
-
-                      <div class="container center-row clr">
-
-                          <div class="wpex-vc-columns-wrap clr">
-                              <div class="wpb_column vc_column_container vc_col-sm-12">
-                                  <div class="vc_column-inner wpex-clr">
-                                      <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
-                                          <div class="vcex-heading vcex-heading-plain wpex-responsive-txt" style="color:#ffffff;font-size:62px;text-align:center;" data-max-font-size="62" data-min-font-size="42"><span class="vcex-heading-inner clr">WE ARE AWESOME</span></div>
-                                          <div class="vcex-divider vcex-divider-solid" style="width:10%;margin-bottom:25px;border-top-width:3px;border-color:#ef5c32;"></div>
-                                          <div class="vcex-heading vcex-heading-plain" style="color:#ffffff;font-size:18px;text-align:center;"><span class="vcex-heading-inner clr">BECAUSE WE'RE THE BEST AT WHAT WE DO</span></div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- .wpex-vc-columns-wrap -->
-                      </div>
-                      <!-- .container -->
-                  </div>
-                </div>
+  {% if site.acf.tipo_de_banner == 'dinamico' %}
+    {{fn('do_shortcode', site.acf.banner_dinamico_shortcode)}}
+  {% elseif site.acf.tipo_de_banner == 'estatico' %}
+  <div class="vc_row wpb_row vc_row-fluid vc_custom_1444181465454 vc_row-o-full-height vc_row-o-columns-middle vc_row-flex typography-white" style="background: #000000 url({{site.acf.banner_estatico_background}}) !important;">
+    <div class="container center-row clr">
+      <div class="wpex-vc-columns-wrap clr">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+          <div class="vc_column-inner wpex-clr">
+            <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
+              {% if site.acf.banner_estatico_texto_principal %}
+              <div class="vcex-heading vcex-heading-plain wpex-responsive-txt" style="color:#ffffff;font-size:62px;text-align:center;" data-max-font-size="62" data-min-font-size="42"><span class="vcex-heading-inner clr">{{site.acf.banner_estatico_texto_principal}}</span></div>
+              <div class="vcex-divider vcex-divider-solid" style="width:10%;margin-bottom:25px;border-top-width:3px;border-color:#ef5c32;"></div>
+              {% endif %}
+              {% if site.acf.banner_estatico_texto_secundario %}
+              <div class="vcex-heading vcex-heading-plain" style="color:#ffffff;font-size:18px;text-align:center;"><span class="vcex-heading-inner clr">{{site.acf.banner_estatico_texto_secundario}}</span></div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- .wpex-vc-columns-wrap -->
+    </div>
+    <!-- .container -->
+  </div>
+  {% endif %}
+</div>

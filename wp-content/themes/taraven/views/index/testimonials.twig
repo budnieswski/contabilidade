@@ -1,6 +1,6 @@
 <div class="wpex-vc-row-wrap clr wpex-vc-row-centered wpex-offset-vc-15">
 
-  <div data-ls_id="#home-testemunhos" class="vc_row wpb_row vc_row-fluid vc_custom_1444182103005 typography-white">
+  <div data-ls_id="#home-testemunhos" class="vc_row wpb_row vc_row-fluid vc_custom_1444182103005 typography-white" style="background: #777777 url({{site.acf.testemunho_background}}) !important;">
 
       <div class="container center-row clr">
 
@@ -8,96 +8,30 @@
               <div class="wpb_column vc_column_container vc_col-sm-12">
                   <div class="vc_column-inner wpex-clr">
                       <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
-                          <h2 style="font-size: 32px;color: #ffffff;text-align: center;font-family:Roboto Slab;font-weight:400;font-style:normal" class="vc_custom_heading">Testemunhos</h2>
+                          <h2 style="font-size: 32px;color: #ffffff;text-align: center;font-family:Roboto Slab;font-weight:400;font-style:normal" class="vc_custom_heading">{{site.acf.testemunho_titulo}}</h2>
                           <div class="vcex-divider vcex-divider-solid" style="width:10%;margin-top:15px;margin-bottom:20px;border-top-width:3px;border-color:#ef5c32;"></div>
                           <div class="vcex-testimonials-fullslider vcex-flexslider-wrap wpex-fs-21px light-skin" style="padding-top:25px;">
 
                               <div class="wpex-slider slider-pro" data-dots="true" data-fade-arrows="false" data-loop="true" data-arrows="false" data-animation-speed="600" data-thumbnail-height="50" data-thumbnail-width="50">
 
                                   <div class="wpex-slider-slides sp-slides">
-
-
+                                    {% for item in site.acf.testemunho_itens %}
                                       <div class="wpex-slider-slide sp-slide">
-
                                           <div class="vcex-testimonials-fullslider-inner textcenter clr">
-
-
-
                                               <div class="entry remove-last-p-margin wpex-fw-300 clr">
-                                                  <p>Dessert dessert topping. Chocolate bar tootsie roll candy cotton candy cookie sweet bonbon lemon drops. Toffee dragée bonbon. Gingerbread soufflé sweet roll unerdwear.com cheesecake dragée gummies caramels.</p>
+                                                  {{item.texto}}
                                               </div>
-
 
                                               <div class="vcex-testimonials-fullslider-author wpex-fs-14px clr">
-
-                                                  LANDON
-
+                                                {{item.autor}}
                                               </div>
                                               <!-- .vcex-testimonials-fullslider-author -->
-
-
                                           </div>
                                           <!-- .entry -->
 
                                       </div>
                                       <!-- .wpex-slider-slide sp-slide -->
-
-
-
-                                      <div class="wpex-slider-slide sp-slide">
-
-                                          <div class="vcex-testimonials-fullslider-inner textcenter clr">
-
-
-
-                                              <div class="entry remove-last-p-margin wpex-fw-300 clr">
-                                                  <p>Lollipop biscuit gummies cotton candy cheesecake. Jelly-o chocolate cake soufflé oat cake lemon drops muffin. Sesame snaps sweet roll croissant&#8230; Topping lollipop marshmallow sugar plum sweet roll muffin cookie!!!</p>
-                                              </div>
-
-
-                                              <div class="vcex-testimonials-fullslider-author wpex-fs-14px clr">
-
-                                                  CHRISTINE
-
-                                              </div>
-                                              <!-- .vcex-testimonials-fullslider-author -->
-
-
-                                          </div>
-                                          <!-- .entry -->
-
-                                      </div>
-                                      <!-- .wpex-slider-slide sp-slide -->
-
-
-
-                                      <div class="wpex-slider-slide sp-slide">
-
-                                          <div class="vcex-testimonials-fullslider-inner textcenter clr">
-
-
-
-                                              <div class="entry remove-last-p-margin wpex-fw-300 clr">
-                                                  <p>Pudding muffin unerdwear.com caramels! Gummies jelly carrot cake cake cookie lollipop jelly-o chocolate cake cupcake. Carrot cake tiramisu macaroon bear claw tootsie roll sesame snaps toffee!</p>
-                                              </div>
-
-
-                                              <div class="vcex-testimonials-fullslider-author wpex-fs-14px clr">
-
-                                                  VINCENT
-
-                                              </div>
-                                              <!-- .vcex-testimonials-fullslider-author -->
-
-
-                                          </div>
-                                          <!-- .entry -->
-
-                                      </div>
-                                      <!-- .wpex-slider-slide sp-slide -->
-
-
-
+                                    {% endfor %}
                                   </div>
                                   <!-- .wpex-slider-slides -->
 
@@ -117,11 +51,6 @@
 
       </div>
       <!-- .container -->
-
-
-
   </div>
-
-
 </div>
 <!-- .wpex-vc-row-wrap -->

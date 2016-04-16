@@ -58,9 +58,15 @@
   <header id="site-header" class="header-one fixed-scroll clr" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
     <div id="site-header-inner" class="container clr">
       <div id="site-logo" class="site-branding clr header-one-logo">
-          <div id="site-logo-inner" class="clr">
+          {# <div id="site-logo-inner" class="clr">
               <a href="{{ site.url }}" title="N&A" rel="home" class="site-logo-text">
                 <span id="site-logo-fa-icon" class="fa fa-bolt"></span>N&A
+              </a>
+          </div>
+          <!-- #site-logo-inner --> #}
+          <div id="site-logo-inner" class="clr">
+              <a href="{{ site.url }}" title="N&A" rel="home" class="site-logo-text">
+                <img src="{{site.theme.link}}/assets/img/logo.png" width="100" alt="" style="width:125px;">
               </a>
           </div>
           <!-- #site-logo-inner -->
@@ -107,9 +113,7 @@
                                   <div class="vc_column-inner wpex-clr">
                                       <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr " style="margin-bottom: 0;">
                                           <div class="wpb_text_column wpb_content_element ">
-                                              <div class="wpb_wrapper">
-                                                  <p style="text-align: center;"><span style="font-size: 14px;">A <a title="Total WordPress Theme" href="http://themeforest.net/item/total-responsive-multipurpose-wordpress-theme/6339019?ref=wpexplorer" target="_blank">Total WordPress Theme</a> Creation © 2015</span></p>
-
+                                              <div class="wpb_wrapper"> {{site.acf.rodape}}
                                               </div>
                                           </div>
                                       </div>
@@ -120,11 +124,7 @@
 
                       </div>
                       <!-- .container -->
-
-
-
                   </div>
-
 
               </div>
               {# ~ footer #}

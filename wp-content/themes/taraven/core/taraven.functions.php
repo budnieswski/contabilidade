@@ -223,12 +223,12 @@ function taraven_acf_gallery ($data='banner') {
 */
 function taraven_put_video ($link) {
 
-  if( ereg("youtube", $link) ) {
+  if( preg_match('/youtube/', $link, $matches) ) {
 
     preg_match('/(\?v=|\/\d\/|\/embed\/|\/v\/|\.be\/)([a-zA-Z0-9\-\_]+)/', $link, $url);
     return "http://www.youtube.com/embed/".$url[2];
     
-  } elseif( ereg("vimeo", $link) ) {
+  } elseif( preg_match('/vimeo/', $link, $matches) ) {
     
     preg_match('/(\d{4,10}+)/', $link, $url);
     return "http://player.vimeo.com/video/".$url[0];

@@ -10,8 +10,7 @@
                       <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
                           <div class="wpb_text_column wpb_content_element ">
                               <div class="wpb_wrapper">
-                                  <p style="text-align: center;"><span style="font-size: 24px;">CONTATO</span></p>
-
+                                <p style="text-align: center;"><span style="font-size: 24px;">CONTATO</span></p>
                               </div>
                           </div>
                           <div class="vcex-divider vcex-divider-solid" style="width:10%;margin-top:15px;border-top-width:3px;border-color:#ef5c32;"></div>
@@ -57,50 +56,42 @@
 
                           <div class="vcex-spacing" style="height:25px"></div>
                           <div class="vcex-list_item">
-
-
-                              <div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-phone"></span></div>(41) 3085-0734 <br>
-                              <div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-phone"></span></div>(41) 3053-4735 <br>
+                            {% if site.acf.telefone_1 %}
+                              <div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-phone"></span></div>{{site.acf.telefone_1}}<br>
+                            {% endif %}
+                            {% if site.acf.telefone_2 %}
+                              <div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-phone"></span></div>{{site.acf.telefone_2}}<br>
+                            {% endif %}
                           </div>
                           <!-- .vcex-list_item -->
                           <div class="vcex-spacing" style="height:5px"></div>
                           <div class="vcex-list_item">
-
-
-                              <div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-whatsapp"></span></div>(41) 9143-8366
+                            {% if site.acf.celular_1 %}
+                              <div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-whatsapp"></span></div>{{site.acf.celular_1}}
+                            {% endif %}
+                            {% if site.acf.celular_2 %}
+                              <br><div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-whatsapp"></span></div>{{site.acf.celular_2}}
+                            {% endif %}
                           </div>
                           <!-- .vcex-list_item -->
                           <div class="vcex-spacing" style="height:5px"></div>
                           <div class="vcex-list_item">
-
-
-                              <div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-envelope"></span></div>andre@nasantunes.com.br
+                            <div class="vcex-icon-wrap" style="color:#ef5c32;"><span class="fa fa-envelope"></span></div>{{site.acf.email}}
                           </div>
                           <!-- .vcex-list_item -->
                           <div class="vcex-spacing" style="height:25px"></div>
                           <div class="wpex-social-btns" style="font-size:13px;">
 
 
+                            {% if site.acf.link_twitter %}
+                              <a href="{{site.acf.link_twitter}}" target="_blank" class="wpex-social-btn wpex-social-btn-flat wpex-semi-rounded wpex-twitter"><span class="fa fa-twitter"></span></a>
+                            {% endif %}
 
-                              <a href="https://twitter.com/WPExplorer" class="wpex-social-btn wpex-social-btn-flat wpex-semi-rounded wpex-twitter"><span class="fa fa-twitter"></span></a>
+                            {% if site.acf.link_facebook %}
+                              <a href="{{site.acf.link_facebook}}" target="_blank" class="wpex-social-btn wpex-social-btn-flat wpex-semi-rounded wpex-facebook"><span class="fa fa-facebook-square"></span></a>
+                            {% endif %}
 
-
-
-
-
-                              <a href="https://dribbble.com/aj-clarke" class="wpex-social-btn wpex-social-btn-flat wpex-semi-rounded wpex-pinterest"><span class="fa fa-pinterest"></span></a>
-
-
-
-
-
-                              <a href="https://github.com/wpexplorer/" class="wpex-social-btn wpex-social-btn-flat wpex-semi-rounded wpex-facebook"><span class="fa fa-facebook-square"></span></a>
-
-
-
-
-
-                              <a href="mailto:email@site.com" class="wpex-social-btn wpex-social-btn-flat wpex-semi-rounded wpex-email"><span class="fa fa-envelope"></span></a>
+                            <a href="mailto:{{site.acf.email}}" class="wpex-social-btn wpex-social-btn-flat wpex-semi-rounded wpex-email"><span class="fa fa-envelope"></span></a>
 
 
 

@@ -1,7 +1,6 @@
 .vc_custom_1444181465454 {
         padding-top: 100px !important;
         padding-bottom: 100px !important;
-        background: #000000 url(http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/chair-d.jpg?id=37) !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
@@ -24,7 +23,6 @@
     }
     .vc_custom_1444182103005 {
         padding-top: 75px !important;
-        background: #777777 url(http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/coffee-d.jpg?id=36) !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
@@ -257,3 +255,14 @@
     label {
         color: Post Series
     }
+
+
+.wpex-sticky-header-holder.is-sticky #site-logo-inner {
+    padding-top: 10%;
+}
+.wpex-sticky-header-holder.is-sticky #site-header-inner {
+    padding-bottom: 15px;
+}
+.wpex-sticky-header-holder.is-sticky .navbar-style-one {
+    top: 65%;
+}

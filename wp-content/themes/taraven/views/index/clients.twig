@@ -1,6 +1,6 @@
 <div class="wpex-vc-row-wrap clr wpex-vc-row-centered wpex-offset-vc-15">
 
-    <div class="vc_row wpb_row vc_row-fluid typography-white" style="padding-top: 75px;padding-bottom: 25px;background: #777777 url(http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/desk2d.jpg);background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <div class="vc_row wpb_row vc_row-fluid typography-white" style="padding-top: 75px;padding-bottom: 25px;background: #777777 url({{site.acf.clientes_background}});background-position: center;background-repeat: no-repeat;background-size: cover;">
 
         <div class="container center-row clr">
 
@@ -8,87 +8,19 @@
                 <div class="wpb_column vc_column_container vc_col-sm-12">
                     <div class="vc_column-inner wpex-clr">
                         <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
-                            <h2 style="font-size: 32px;color: #ffffff;text-align: center;font-family:Roboto Slab;font-weight:400;font-style:normal" class="vc_custom_heading">Clientele</h2>
+                            <h2 style="font-size: 32px;color: #ffffff;text-align: center;font-family:Roboto Slab;font-weight:400;font-style:normal" class="vc_custom_heading">{{site.acf.clientes_titulo}}</h2>
                             <div class="vcex-divider vcex-divider-solid" style="width:10%;margin-top:15px;margin-bottom:40px;border-top-width:3px;border-color:#ef5c32;"></div>
 
                             <div class="vcex-image-grid wpex-row clr grid-style-default">
-
-
-                                <div class="id-10 vcex-image-grid-entry span_1_of_4 col col-1">
-
+                                {% for item in site.acf.clientes_itens %}
+                                <div class="id-{{loop.index}} vcex-image-grid-entry span_1_of_4 col col-{{loop.index}}">
                                     <figure class="vcex-image-grid-entry-img clr ">
-
-
-
-                                        <img src="http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/envato-500x150-175x53.png" width="175" height="53" alt="Envato-500&#215;150" />
-
-
-
-
+                                        <img src="{{item.imagem}}" width="175" height="53" alt="{{item.nome}}" />
                                     </figure>
-
                                 </div>
-                                <!--. vcex-image-grid-entry -->
-
-
-                                <div class="id-11 vcex-image-grid-entry span_1_of_4 col col-2">
-
-                                    <figure class="vcex-image-grid-entry-img clr ">
-
-
-
-                                        <img src="http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/jquery-500x150-175x53.png" width="175" height="53" alt="Jquery-500&#215;150" />
-
-
-
-
-                                    </figure>
-
-                                </div>
-                                <!--. vcex-image-grid-entry -->
-
-
-                                <div class="id-12 vcex-image-grid-entry span_1_of_4 col col-3">
-
-                                    <figure class="vcex-image-grid-entry-img clr ">
-
-
-
-                                        <img src="http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/woocommerce-500x150-175x53.png" width="175" height="53" alt="Woocommerce-500&#215;150" />
-
-
-
-
-                                    </figure>
-
-                                </div>
-                                <!--. vcex-image-grid-entry -->
-
-
-                                <div class="id-13 vcex-image-grid-entry span_1_of_4 col col-4">
-
-                                    <figure class="vcex-image-grid-entry-img clr ">
-
-
-
-                                        <img src="http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/bbpress-500x150-175x53.png" width="175" height="53" alt="Bbpress-500&#215;150" />
-
-
-
-
-                                    </figure>
-
-                                </div>
-                                <!--. vcex-image-grid-entry -->
-
-
+                                {% endfor %}
                             </div>
                             <!-- .vcex-image-grid -->
-
-
-
-
-
                         </div>
                     </div>
                 </div>

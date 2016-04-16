@@ -2,141 +2,53 @@
 
   <div data-ls_id="#home-servicos" class="vc_row wpb_row vc_row-fluid vc_custom_1444182003655">
 
-      <div class="container center-row clr">
+    <div class="container center-row clr">
 
-          <div class="wpex-vc-columns-wrap clr">
-              <div class="wpb_column vc_column_container vc_col-sm-12">
-                  <div class="vc_column-inner wpex-clr">
-                      <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
-                          <h2 style="font-size: 32px;text-align: center;font-family:Roboto Slab;font-weight:400;font-style:normal" class="vc_custom_heading">{{ site.acf.servicos_titulo }}</h2>
-                          <div class="vcex-divider vcex-divider-solid" style="width:10%;margin-top:15px;margin-bottom:25px;border-top-width:3px;border-color:#ef5c32;"></div>
-                          <div class="wpb_text_column wpb_content_element ">
-                              <div class="wpb_wrapper">{{ site.acf.servicos_conteudo }}</div>
-                          </div>
-                      </div>
+      <div class="wpex-vc-columns-wrap clr">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner wpex-clr">
+              <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
+                <h2 style="font-size: 32px;text-align: center;font-family:Roboto Slab;font-weight:400;font-style:normal" class="vc_custom_heading">{{ site.acf.servicos_titulo }}</h2>
+                  <div class="vcex-divider vcex-divider-solid" style="width:10%;margin-top:15px;margin-bottom:25px;border-top-width:3px;border-color:#ef5c32;"></div>
+                  <div class="wpb_text_column wpb_content_element ">
+                      <div class="wpb_wrapper">{{ site.acf.servicos_conteudo }}</div>
                   </div>
               </div>
-          </div>
-          <!-- .wpex-vc-columns-wrap -->
-
+            </div>
+        </div>
       </div>
-      <!-- .container -->
-
-
-
+      {# ~ columns-wrap #}
+    </div>
+    {# ~ container #}
   </div>
-
-
 </div>
-<!-- .wpex-vc-row-wrap -->
+{# ~ row-wrap #}
 
 
 <div class="wpex-vc-row-wrap clr wpex-vc-row-centered wpex-vc-has-custom-column-spacing wpex-vc-column-spacing-30 wpex-offset-vc-15">
 
   <div class="vc_row wpb_row vc_row-fluid" style="padding-bottom: 40px;">
 
-      <div class="container center-row clr">
+    <div class="container center-row clr">
 
-          <div class="wpex-vc-columns-wrap clr">
-              <div class="wpb_column vc_column_container vc_col-sm-4">
-                  <div class="vc_column-inner wpex-clr">
-                      <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
-                          <div class="vcex-icon-box clr vcex-icon-box-four" style="border-color:#dddddd;">
-
-
-
-                              <img src="http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/design.png" alt="DESIGN" class="vcex-icon-box-image" />
-
-
-
-                              <h2 class="vcex-icon-box-heading" style="letter-spacing:1px;"> DESIGN </h2>
-
-
-
-
-                              <div class="vcex-icon-box-content clr">
-                                  <p>Chocolate bar cotton candy jujubes jelly beans dessert cheesecake chocolate cake. Gingerbread jelly halvah wafer topping sugar plum. Chocolate cake lemon drops jujubes chocolate bar tootsie roll. Cherry pie bear claw cupcake.</p>
-                              </div>
-                              <!-- .vcex-icon-box-content -->
-
-
-
-                          </div>
-                          <!-- .vcex-icon-box -->
-
-
-                      </div>
-                  </div>
+      <div class="wpex-vc-columns-wrap clr">
+        {% for item in site.acf.servicos_itens %}
+          <div class="wpb_column vc_column_container vc_col-sm-4">
+            <div class="vc_column-inner wpex-clr">
+              <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
+                <div class="vcex-icon-box clr vcex-icon-box-four" style="border-color:#dddddd;">
+                  <img src="{{item.imagem}}" alt="DESIGN" class="vcex-icon-box-image" />
+                  <h2 class="vcex-icon-box-heading" style="letter-spacing:1px;">{{item.titulo}}</h2>
+                  <div class="vcex-icon-box-content clr"> <p>{{item.resumo}}</p> </div>
+                </div>
               </div>
-              <div class="wpb_column vc_column_container vc_col-sm-4">
-                  <div class="vc_column-inner wpex-clr">
-                      <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
-                          <div class="vcex-icon-box clr vcex-icon-box-four" style="border-color:#dddddd;">
-
-
-
-                              <img src="http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/website.png" alt="DEVELOPMENT" class="vcex-icon-box-image" />
-
-
-
-                              <h2 class="vcex-icon-box-heading" style="letter-spacing:1px;">DEVELOPMENT</h2>
-
-
-
-
-                              <div class="vcex-icon-box-content clr">
-                                  <p>Chupa chups cake chupa chups brownie. Fruitcake bear claw halvah crumb soufflé cupcake marzipan. Chocolate apple pie soufflé danish tootsie roll. Candy canes gummi bears marshmallow. Tart cake carrot cake pudding.</p>
-                              </div>
-                              <!-- .vcex-icon-box-content -->
-
-
-
-                          </div>
-                          <!-- .vcex-icon-box -->
-
-
-                      </div>
-                  </div>
-              </div>
-              <div class="wpb_column vc_column_container vc_col-sm-4">
-                  <div class="vc_column-inner wpex-clr">
-                      <div class="wpb_wrapper wpex-vc-column-wrapper wpex-clr ">
-                          <div class="vcex-icon-box clr vcex-icon-box-four" style="border-color:#dddddd;">
-
-
-
-                              <img src="http://totaltheme.wpengine.com/freelancer/wp-content/uploads/sites/22/2015/01/commerce.png" alt="E-COMMERCE" class="vcex-icon-box-image" />
-
-
-
-                              <h2 class="vcex-icon-box-heading" style="letter-spacing:1px;">E-COMMERCE</h2>
-
-
-
-                              <div class="vcex-icon-box-content clr">
-                                  <p>Cheesecake cupcake chupa chups icing tiramisu apple pie. Bonbon gummies gummi bears cookie gummies brownie. Jelly beans bonbon chocolate. Topping cupcake sugar plum jujubes chupa chups pastry bonbon topping.</p>
-                              </div>
-                              <!-- .vcex-icon-box-content -->
-
-
-
-                          </div>
-                          <!-- .vcex-icon-box -->
-
-
-                      </div>
-                  </div>
-              </div>
+            </div>
           </div>
-          <!-- .wpex-vc-columns-wrap -->
-
+        {% endfor %}
       </div>
-      <!-- .container -->
-
-
-
+      {# ~ columns-wrap #}
+    </div>
+    {# ~ container #}
   </div>
-
-
 </div>
-<!-- .wpex-vc-row-wrap -->
+{# ~ row-wrap #}
